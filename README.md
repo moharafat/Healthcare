@@ -1,2 +1,2 @@
 # Home Healthy
-Home helthcare website similatr to talabat.com
+Home healthcare website similar to talabat.com
