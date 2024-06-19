@@ -1,2 +1,2 @@
 # Home Healthy
-Home healthcare website similar to talabat.com or www.ubereats.com
+Home healthcare website similar to www.talabat.com or www.ubereats.com
