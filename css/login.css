@@ -12,14 +12,20 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #131313;
-  color: white;
+  /* BY LUCK  */
+  background: url('../images/Old.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  padding:  30px 40px;
+  border: 5px solid rgba(255, 255, 255, .2);
 }
 
 .wrapper .input-box{
   width: 100%;
   height: 50px;
-  background: rgb(255, 113, 97);
+  /* background: rgb(255, 113, 97); */
+  background: transparent;
   margin: 30px 0;
   border-radius: 5rem;
 
@@ -29,19 +35,83 @@
   height: 100%;
   background: transparent;
   border-color: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 5rem;
+  font-size: 18px;
+  padding: 20px 45px 20px;
 }
 
 .input-box input::placeholder{
-  color: white;
+  /* color: white; */
+  color: black;
+  font-weight: 800;
 }
+
 /* error here */
 .input-box i {
   position: absolute;
   right: 20px;
-  top: 50%; 
+  /* top: 50%;  */
   transform: translateY(-50%);
   font-size: 20px;
 }
+
+.wrapper .remember-forget {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: -15px 0 15px;
+  color: white;
+}
+
+.remember-forgot label input {
+  align-content: white;
+  margin-right: 3px;
+}
+
+.remember-forget a {
+  color: white;
+  text-decoration: none;
+}
+.remember-forget a:hover {
+  color: red;
+  text-decoration: underline;
+}
+.wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background: white;
+  border: none;
+  outline: none;
+  border-radius: 5rem;
+  box-shadow: 0 0 10px rbba(0, 0, 0, .1);
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+.wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+  /* display: flex;
+  justify-content: center;  */
+}
+
+.register-link p, a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+
+
 
 
 /* IMPORTED FROM OTHER FILE*/
