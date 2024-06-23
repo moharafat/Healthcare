@@ -1,10 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'kumbh Sans', sans-serif ;
+    font-family: 'Poppins', sans-serif ;
 }
 
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #131313;
+  color: white;
+}
+
+.wrapper .input-box{
+  width: 100%;
+  height: 50px;
+  background: rgb(255, 113, 97);
+  margin: 30px 0;
+  border-radius: 5rem;
+
+}
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-color: transparent;
+}
+
+.input-box input::placeholder{
+  color: white;
+}
+/* error here */
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%; 
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+
+/* IMPORTED FROM OTHER FILE*/
 .navbar {
     background: #131313;
     height: 80px;
