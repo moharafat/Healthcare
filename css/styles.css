@@ -217,6 +217,9 @@
   z-index: 1;
   max-width: 1300px;
   padding: 0 50px;
+  background: url('../images/Old.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .main__content h1 {
   font-size: 4rem;
