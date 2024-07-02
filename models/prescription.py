@@ -15,7 +15,7 @@ class Prescription(BaseModel, Base):
         __tablename__ = 'prescriptions'
         appointment_id = Column(String(60), ForeignKey('appointments.id'), nullable=False)
         doctor_id = Column(String(60), ForeignKey('doctors.id'), nullable=False)
-        patient_id = Column(String(60), ForeignKey('patients.id'), nullable=False)
+        user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
         medication = Column(String(255), nullable=False)
         dosage = Column(String(255), nullable=False)
         instructions = Column(String(1024), nullable=True)
@@ -23,7 +23,8 @@ class Prescription(BaseModel, Base):
     else:
         appointment_id = ""
         doctor_id = ""
-        patient_id = ""
+        user_id = ""
+        medication = ""
         dosage = ""
         instructions = ""
 

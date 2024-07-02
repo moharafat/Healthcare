@@ -13,15 +13,19 @@ class Appointment(BaseModel, Base):
     """Representation of an Appointment"""
     if models.type_of_storage == 'db':
         __tablename__ = 'appointments'
-        patient_id = Column(String(60), ForeignKey('patients.id'), nullable=False)
+        user_id = Column(String(60), ForeignKey('users.id'), nullable=True)
         doctor_id = Column(String(60), ForeignKey('doctors.id'), nullable=False)
+        email = Column(String(255), nullable=False)
+        patient_name = Column(String(255), nullable=False)
         date = Column(String(255), nullable=False)
         time = Column(String(255), nullable=False)
-        status = Column(String(255), nullable=False)
+        status = Column(String(255), default='pending')
 
     else:
-        patient_id = ""
+        user_id = ""
         doctor_id = ""
+        email = ""
+        pateint_name = ""
         date = ""
         time = ""
         status = ""

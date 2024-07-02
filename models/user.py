@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" holds class Patient"""
+""" holds class user"""
 
 import models
 from models.base_model import BaseModel, Base
@@ -10,22 +10,22 @@ from sqlalchemy.orm import relationship
 from hashlib import md5
 
 
-class Patient(BaseModel, Base):
-    """Representation of a Patient """
+class User(BaseModel, Base):
+    """Representation of a user """
     if models.type_of_storage == 'db':
-        __tablename__ = 'patients'
+        __tablename__ = 'users'
         email = Column(String(255), nullable=False)
         first_name = Column(String(255), nullable=False)
         last_name = Column(String(255), nullable=False)
-        appointments = relationship("Appointment", backref="patient")
-        prescriptions = relationship("Prescription", backref="patient")
+        appointments = relationship("Appointment", backref="user")
+        prescriptions = relationship("Prescription", backref="user")
     else:
         email = ""
         first_name = ""
         last_name = ""
 
     def __init__(self, *args, **kwargs):
-        """initializes Patient"""
+        """initializes user"""
         super().__init__(*args, **kwargs)
 
     def __setattr__(self, name, value):

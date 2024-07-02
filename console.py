@@ -9,11 +9,11 @@ from models.base_model import BaseModel
 from models.schedule import DoctorSchedule
 from models.prescription import Prescription
 from models.appointment import Appointment
-from models.patient import Patient
+from models.user import User
 import shlex
 
 classes = {"Doctor": Doctor, "DoctorSchedule": DoctorSchedule, "BaseModel": BaseModel,
-           "Prescription": Prescription, "Appointment": Appointment, "Patient": Patient}
+           "Prescription": Prescription, "Appointment": Appointment, "User": User}
 
 
 class HBNBCommand(cmd.Cmd):

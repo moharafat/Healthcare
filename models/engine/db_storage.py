@@ -9,14 +9,14 @@ from models.base_model import BaseModel, Base
 from models.schedule import DoctorSchedule
 from models.prescription import Prescription
 from models.appointment import Appointment
-from models.patient import Patient
+from models.user import User
 from os import getenv
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 classes = {"Doctor": Doctor, "DoctorSchedule": DoctorSchedule,
-           "Prescription": Prescription, "Appointment": Appointment, "Patient": Patient}
+           "Prescription": Prescription, "Appointment": Appointment, "User": User}
 
 
 class DBStorage:
@@ -81,7 +81,6 @@ class DBStorage:
         """
         if cls not in classes.values():
             return None
-
         all_cls = models.storage.all(cls)
         for value in all_cls.values():
             if (value.id == id):
@@ -103,3 +102,32 @@ class DBStorage:
             count = len(models.storage.all(cls).values())
 
         return count
+
+    def get_doctor_id(self, cls, doctor_name):
+        """
+        Returns the the doctor's id based on his/her first and last name
+        """
+        if cls not in classes.values():
+            return None
+        doc_name = str(doctor_name)
+        first_name, last_name = doc_name.split()
+        all_cls = models.storage.all(cls)
+        for value in all_cls.values():
+            if (value.first_name == first_name) and (value.last_name == last_name):
+                return value.id
+        return None
+
+
+    def get_user_id(self, cls, email):
+        """
+        Returns the the user's id based on his/her email
+        """
+        if cls not in classes.values():
+            return None
+
+        all_cls = models.storage.all(cls)
+        for value in all_cls.values():
+            if (value.email == email):
+                return value.id
+
+        return None
