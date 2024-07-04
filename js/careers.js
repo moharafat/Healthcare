@@ -1,3 +1,47 @@
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('application-form');
+    const locationButton = document.getElementById('location-button');
+    const locationInput = document.getElementById('location');
+
+    // Function to handle form submission
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from submitting the default way
+
+        const formData = {
+            firstname: document.getElementById('firstname').value,
+            lastname: document.getElementById('lastname').value,
+            email: document.getElementById('email').value,
+            specialty: document.getElementById('specialty').value,
+            location: document.getElementById('location').value
+        };
+
+        console.log('Form Data:', formData);
+
+        // Example of sending formData to your server here using fetch or any other method
+
+        fetch('/submit-application', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Handle success actions here
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            // Handle error actions here
+        });
+
+    });
+});
+
+
+
 document.getElementById('location-button').addEventListener('click', function() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
