@@ -16,6 +16,13 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <!-- airbnb section -->
+        <link rel="stylesheet" type="text/css" href="/styles/4-common.css">
+        <link rel="stylesheet" type="/styles/3-header.css">
+        <link rel="stylesheet" type="/styles/3-footer.css">
+        <link rel="stylesheet" type="text/css" href="/styles/6-filters.css">
+        <link type="text/css" rel="stylesheet" href="/styles/100-places.css">
+        <link rel="icon" href="../static/images/icon.png?cache_id={{ cache_id }}" />
     </head>
     <body>
         <!-- Navbar Section -->
@@ -61,7 +68,53 @@
                 </div>
             </div>
          </div>
-        <!-- Services Section -->
+
+        <!-- Airbnb section -->
+        <div class="container">
+            <section class="filters">
+          <div class="locations">
+            <h3>States</h3>
+            <h4>&nbsp;</h4>
+            <div class="popover">
+              <ul>
+                {% for state in states %}
+                <li>
+                  <input type="checkbox" data-id="{{ state[0].id }}" data-name="{{ state[0].name }}" style="margin-right: 10px;">
+                  <h2>{{ state[0].name }}:</h2>
+              <ul>
+                {% for city in state[1] %}
+                <li>
+                  <input type="checkbox" data-id="{{ city.id }}" data-name="{{ city.name }}" style="margin-right: 10px;">
+                  {{ city.name }}
+              </li>
+                {% endfor %}
+              </ul>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="amenities">
+            <h3>Amenities</h3>
+            <h4>&nbsp;</h4>
+            <div class="popover">
+              <ul>
+                {% for amenity in amenities %}
+                <li><input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}" style="margin-right: 10px;">{{ amenity.name }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <button type="button">Search</button>
+            </section>
+            <div class="placesh1"><h1>Places</h1></div>
+            <section class="places">
+              {% for place in places %}
+              {% endfor %}
+            </section>
+          </div>
+
+        <!-- Services Section
         <div class="services">
             <h1>See what the hype is about</h1>
             <div class="services__container">
@@ -86,7 +139,7 @@
                     <button>Reserve Now</button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Footer Section -->
          <div class="footer__container">
