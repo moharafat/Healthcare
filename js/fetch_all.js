@@ -1,36 +1,36 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("application-form");
-    const locationButton = document.getElementById("location-button");
-    const locationInput = document.getElementById("location");
+    // const locationButton = document.getElementById("location-button");
+    // const locationInput = document.getElementById("location");
 
-    locationButton.addEventListener("click", function() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition, showError);
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
-    });
+    // locationButton.addEventListener("click", function() {
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.getCurrentPosition(showPosition, showError);
+    //     } else {
+    //         alert("Geolocation is not supported by this browser.");
+    //     }
+    // });
 
-    function showPosition(position) {
-        locationInput.value = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
-    }
+    // function showPosition(position) {
+    //     locationInput.value = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+    // }
 
-    function showError(error) {
-        switch(error.code) {
-            case error.PERMISSION_DENIED:
-                alert("User denied the request for Geolocation.");
-                break;
-            case error.POSITION_UNAVAILABLE:
-                alert("Location information is unavailable.");
-                break;
-            case error.TIMEOUT:
-                alert("The request to get user location timed out.");
-                break;
-            case error.UNKNOWN_ERROR:
-                alert("An unknown error occurred.");
-                break;
-        }
-    }
+    // function showError(error) {
+    //     switch(error.code) {
+    //         case error.PERMISSION_DENIED:
+    //             alert("User denied the request for Geolocation.");
+    //             break;
+    //         case error.POSITION_UNAVAILABLE:
+    //             alert("Location information is unavailable.");
+    //             break;
+    //         case error.TIMEOUT:
+    //             alert("The request to get user location timed out.");
+    //             break;
+    //         case error.UNKNOWN_ERROR:
+    //             alert("An unknown error occurred.");
+    //             break;
+    //     }
+    // }
 
     form.addEventListener("submit", function(event) {
         event.preventDefault();
