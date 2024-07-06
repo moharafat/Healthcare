@@ -6,6 +6,21 @@ from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
 
 
+@app_views.route('/filter_doctors', methods=['GET'], strict_slashes=False)
+def filter_doctors():
+    """
+    Retrieves the list of all doctors objects based on the provided speciality
+    """
+    doctor_speciality = request.args.get("specialty")
+    if not doctor_speciality:
+        abort(400, description="doctor specialty parameter is required")
+
+    doctors_list =storage.get_doctors(Doctor, doctor_speciality)
+    doctors_dict = [doctor.to_dict() for doctor in doctors_list]
+
+    return jsonify(doctors_dict)
+
+
 @app_views.route('/doctors', methods=['GET'], strict_slashes=False)
 def get_doctors():
     """

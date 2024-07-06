@@ -131,3 +131,18 @@ class DBStorage:
                 return value.id
 
         return None
+
+    def get_doctors(self, cls, speciality):
+        """
+        Returns a list of doctor objects based on the provided speciality
+        """
+        if cls not in classes.values():
+            return None
+
+        all_cls = models.storage.all(cls)
+        doctors_list = []
+        for value in all_cls.values():
+            if (value.specialty == speciality):
+                doctors_list.append(value)
+
+        return doctors_list
