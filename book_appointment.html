@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Apply Now</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbcc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/careers.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Make a Doctor Appointment</h2>
+        <form id="application-form">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="specialty">Specialty</label>
+                <input type="text" id="specialty" name="specialty" required>
+            </div>
+            <div class="form-group get-location">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" readonly>
+                <button type="button" id="location-button">📍 Get Location</button>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit Application</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/fetch_all.js"></script>
+</body>
+</html>
