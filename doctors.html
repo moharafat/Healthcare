@@ -60,8 +60,31 @@
                 <h1>Doctors</h1>
                 <h2>All Specializations</h2>
                 <P>See what makes us diffrent</P>
-                <button class="main__btn"><a href="/book_appointment.html">book appointment</
-                a></button>
+                <!-- OLD BUTTON -->
+                <!-- <button class="main__btn"><a href="/book_appointment.html">Book an Appointment</
+                a></button> -->
+                <SECTION class="filters">
+                    <!-- **********************
+	                   AMENITIES
+	                ********************** -->
+                    <DIV class="amenities">
+                        <H3>Speciality</H3>
+                        <H4>&nbsp;</H4>
+                        <UL class="popover">
+                        {% for specialization in specializations|sort(attribute='name') %}
+                          <LI>
+                          <INPUT type="checkbox" data-id="{{ specialization.id }}" data-name="{{ specialization.name }}">
+                            {{ specialization.name }}
+                          </INPUT>
+                        </LI>
+                        {% endfor %}
+                        </UL>
+                      </DIV>
+
+                      <BUTTON>Search</BUTTON>
+                </SECTION>
+
+
                 </div>
                 <div class="main__img--container">
                     <img src="images/doctors.jpg" alt="pic" id="main__img" />
@@ -207,6 +230,6 @@
             </div>
 
          </div>
-        <script src="app.js"></script>       
+        <script src="js/doctor.js"></script>       
     </body>
 </html>
